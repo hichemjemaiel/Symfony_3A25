@@ -1,0 +1,28 @@
+<div>
+    {% if authors %}
+    <table>
+        <tr>
+        <th>Picture</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>nbBooks</th>
+        <th>Details</th>
+        </tr>
+
+        {% for author in authors %}
+
+        <tr>
+            <th>{{ author.picture }}</th>
+            <th> {{ author.username }}</th>
+            <th>{{ author.email }}</th>
+            <th>{{ author.nb_books }}</th>    
+            <th><a href = "{{ path("details", {id : author.id})}}">click here</a>
+        </tr>        
+         {% endfor %}
+
+    </table>
+    {% else %}
+    <h1>Table is empty</h1>
+    {% endif %} 
+    
+</div>
